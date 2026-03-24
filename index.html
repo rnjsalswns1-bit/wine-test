@@ -1,14 +1,137 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <title>와인 소개 홈페이지</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background-color: #fafafa; }
+    header { background-color: #7b1e3a; color: white; padding: 20px; text-align: center; }
+    nav { background-color: #333; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { padding: 20px; }
+    .wine-card { background: white; border-radius: 10px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .wine-card img { width: 100%; max-width: 200px; border-radius: 10px; }
+    footer { text-align: center; padding: 15px; background-color: #7b1e3a; color: white; margin-top: 20px; }
+  </style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+<header>
+  <h1>🍷 와인 소개 홈페이지</h1>
+  <p>당신에게 맞는 와인을 찾아보세요</p>
+</header>
+
+<nav>
+  <a href="#red">레드 와인</a>
+  <a href="#white">화이트 와인</a>
+  <a href="#sparkling">스파클링 와인</a>
+</nav>
+
+<div class="container">
+
+  <h2 id="red">🍇 레드 와인</h2>
+
+  <!-- 카베르네 -->
+  <div class="wine-card">
+    <h3 onclick="toggle('cabernet')" style="cursor:pointer;">카베르네 소비뇽 (클릭)</h3>
+    <img src="https://via.placeholder.com/200">
+    <p>진한 바디감과 탄닌이 특징이며, 육류와 잘 어울립니다.</p>
+    <div id="cabernet" style="display:none;">
+      <ul>
+        <li>로버트 몬다비</li>
+        <li>1865 카베르네</li>
+        <li>옐로우 테일</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 메를로 -->
+  <div class="wine-card">
+    <h3 onclick="toggle('merlot')" style="cursor:pointer;">메를로 (클릭)</h3>
+    <img src="https://via.placeholder.com/200">
+    <p>부드러운 맛과 과일 향이 특징이며, 초보자에게 추천됩니다.</p>
+    <div id="merlot" style="display:none;">
+      <ul>
+        <li>샤토 페트뤼스</li>
+        <li>덕혼 메를로</li>
+        <li>콜럼비아 크레스트</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="white">🍋 화이트 와인</h2>
+
+  <!-- 샤르도네 -->
+  <div class="wine-card">
+    <h3 onclick="toggle('chardonnay')" style="cursor:pointer;">샤르도네 (클릭)</h3>
+    <img src="https://via.placeholder.com/200">
+    <p>버터리한 풍미와 산미가 특징이며, 해산물과 잘 어울립니다.</p>
+    <div id="chardonnay" style="display:none;">
+      <ul>
+        <li>라 크레마</li>
+        <li>브레드 앤 버터</li>
+        <li>킴 크로포드</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 소비뇽 블랑 -->
+  <div class="wine-card">
+    <h3 onclick="toggle('sauvignon')" style="cursor:pointer;">소비뇽 블랑 (클릭)</h3>
+    <img src="https://via.placeholder.com/200">
+    <p>상큼한 산미와 허브 향이 특징입니다.</p>
+    <div id="sauvignon" style="display:none;">
+      <ul>
+        <li>킴 크로포드</li>
+        <li>클라우디 베이</li>
+        <li>오이스터 베이</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="sparkling">✨ 스파클링 와인</h2>
+
+  <!-- 샴페인 -->
+  <div class="wine-card">
+    <h3 onclick="toggle('champagne')" style="cursor:pointer;">샴페인 (클릭)</h3>
+    <img src="https://via.placeholder.com/200">
+    <p>프랑스 샴페인 지역에서 생산된 고급 스파클링 와인입니다.</p>
+    <div id="champagne" style="display:none;">
+      <ul>
+        <li>모엣 샹동</li>
+        <li>돔 페리뇽</li>
+        <li>뵈브 클리코</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 프로세코 -->
+  <div class="wine-card">
+    <h3 onclick="toggle('prosecco')" style="cursor:pointer;">프로세코 (클릭)</h3>
+    <img src="https://via.placeholder.com/200">
+    <p>이탈리아 대표 스파클링 와인으로 가볍고 상큼하며 데일리로 좋습니다.</p>
+    <div id="prosecco" style="display:none;">
+      <ul>
+        <li>라 마르카</li>
+        <li>미오네토</li>
+        <li>산테로</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 와인 소개 사이트</p>
+</footer>
+
+<script>
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+}
+</script>
+
 </body>
 </html>
