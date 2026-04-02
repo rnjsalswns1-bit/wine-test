@@ -12,6 +12,10 @@
     .container { padding: 20px; }
     .wine-card { background: white; border-radius: 10px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .wine-card img { width: 100%; max-width: 200px; border-radius: 10px; }
+    .contact-form { background: white; border-radius: 10px; padding: 20px; margin: 30px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+    .contact-form button { background-color: #7b1e3a; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; }
+    .contact-form button:hover { background-color: #5a152a; }
     footer { text-align: center; padding: 15px; background-color: #7b1e3a; color: white; margin-top: 20px; }
   </style>
 </head>
@@ -26,6 +30,7 @@
   <a href="#red">레드 와인</a>
   <a href="#white">화이트 와인</a>
   <a href="#sparkling">스파클링 와인</a>
+  <a href="#contact">제휴 문의</a>
 </nav>
 
 <div class="container">
@@ -118,6 +123,23 @@
         <li>산테로</li>
       </ul>
     </div>
+  </div>
+
+  <h2 id="contact">🤝 제휴 문의</h2>
+  <div class="contact-form">
+    <p>와인 유통 및 제휴 제안을 보내주세요. 확인 후 연락드리겠습니다.</p>
+    <form action="https://formspree.io/f/mgopwlva" method="POST">
+      <label>이름
+        <input type="text" name="name" placeholder="성함을 입력해주세요" required>
+      </label>
+      <label>이메일 주소
+        <input type="email" name="email" placeholder="example@email.com" required>
+      </label>
+      <label>문의 내용
+        <textarea name="message" rows="5" placeholder="제휴 제안 내용을 상세히 적어주세요" required></textarea>
+      </label>
+      <button type="submit">문의 보내기</button>
+    </form>
   </div>
 
 </div>
